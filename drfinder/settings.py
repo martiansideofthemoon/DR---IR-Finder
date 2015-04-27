@@ -15,7 +15,7 @@ import os
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
-
+SETTINGS_PATH = os.path.dirname(os.path.dirname(__file__))
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/1.8/howto/deployment/checklist/
 
@@ -26,6 +26,9 @@ SECRET_KEY = 'xtbjr%ks96@d3@i_un(prvlg57kmj4fm%(u%z#+61bgg+=z%ut'
 DEBUG = True
 
 ALLOWED_HOSTS = []
+TEMPLATE_PATH = os.path.join(BASE_DIR, "templates")
+print TEMPLATE_PATH
+TEMPLATE_DIRS=(TEMPLATE_PATH,)
 
 
 # Application definition
@@ -37,6 +40,7 @@ INSTALLED_APPS = (
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'drirfinder',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -55,7 +59,7 @@ ROOT_URLCONF = 'drfinder.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [str(TEMPLATE_PATH)],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
