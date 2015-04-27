@@ -1,5 +1,4 @@
 from django.contrib import admin
-from drirfinder.models import Category, Page
+from drirfinder.models import Category
 
 admin.site.register(Category)
-admin.site.register(Page)
