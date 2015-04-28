@@ -23,7 +23,7 @@ def index(request):
 
     # Bad form (or form details), no form supplied...
     # Render the form with error messages (if any).
-    return render(request, 'rango/index.html', {'form': form})
+    return render(request, 'drirfinder/index.html', {'form': form})
 
 
 def display(request):
