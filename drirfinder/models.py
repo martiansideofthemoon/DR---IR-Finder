@@ -7,5 +7,5 @@ class Category(models.Model):
     department = models.CharField(max_length=128, default="null")
 
     def __unicode__(self):  #For Python 2, use __str__ on Python 3
-        return self.name
+        return self.roll_number
 

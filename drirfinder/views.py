@@ -13,7 +13,8 @@ def index(request):
 
             # Now call the index() view.
             # The user will be shown the homepage.
-            return display(request)
+            newForm = CategoryForm()
+            return render(request,'drirfinder/index.html', {'form': newForm})
         else:
             # The supplied form contained errors - just print them to the terminal.
             print form.errors
@@ -27,6 +28,8 @@ def index(request):
 
 
 def display(request):
-	category_list = Category.objects.order_by('-cpi')[:5]
-	context_dict = {'categories': category_list}
-	return render(request, 'drirfinder/display.html', context_dict)
+    #context = RequestContext(request)
+    category_list = Category.objects.order_by('-cpi')
+    print category_list
+    context_dict = {'categories': category_list}
+    return render(request, 'drirfinder/display.html', context_dict)

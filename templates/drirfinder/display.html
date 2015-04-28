@@ -8,15 +8,18 @@
         <h1>Rango says...hello world!</h1>
 
         {% if categories %}
-            <ul>
+            <ol>
                 {% for category in categories %}
-                <li>{{ category.name }}</li>
+                <li>{{ category.roll_number }} with CPI of {{category.cpi}}</li>
                 {% endfor %}
-            </ul>
+            </ol>
         {% else %}
             <strong>There are no categories present.</strong>
         {% endif %}
-
-        <a href="/drirfinder/">Add More</a>
+        <br>
+        <form id="add" method="get" action="/drirfinder/">
+            <input type="submit" name="Display" value="Add More">
+        </form>
+       
     </body>
 </html>
