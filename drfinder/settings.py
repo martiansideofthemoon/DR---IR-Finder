@@ -27,7 +27,7 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 TEMPLATE_PATH = os.path.join(BASE_DIR, "templates")
-print TEMPLATE_PATH
+
 TEMPLATE_DIRS=(TEMPLATE_PATH,)
 
 
